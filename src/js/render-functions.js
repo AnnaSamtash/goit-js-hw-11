@@ -1,7 +1,5 @@
 import iziToast from "izitoast"
-import { listOfPhotos } from '../main';
-import { lightbox } from '../main';
-
+import { listOfPhotos, lightbox } from '../main';
 
 export function renderPhotos(arr) { 
     if (arr.length == 0) {
@@ -27,8 +25,8 @@ export function renderPhotos(arr) {
             </li>`;
         })
             .join("");
-        
         listOfPhotos.insertAdjacentHTML("beforeend", markup);
+        
         lightbox.refresh();
     }
 }
