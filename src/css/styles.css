@@ -1,15 +1,10 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+@import "izitoast/dist/css/iziToast.min.css";
+@import "simplelightbox/dist/simple-lightbox.min.css";
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat,
+    sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -22,4 +17,196 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #2E2F42;
+  background-color: transparent;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.search-form {
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  top: 36px;
+  left: 534px;
+}
+
+.search-input-form {
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  color: #2e2f42;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  background-color: transparent;
+  outline: 0px solid transparent;
+  transition: border-color 250ms linear;
+}
+
+.search-input-form::placeholder {
+  color: #808080;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.search-input-form:hover {
+  border-color: #000;
+}
+
+.search-input-form:focus-within {
+  border-color: #4e75ff;
+}
+
+.btn-search-form {
+  width: 91px;
+  height: 40px;
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: background-color 250ms linear;
+}
+
+.btn-search-form:hover,
+.btn-search-form:focus {
+  background-color: #6c8cff;
+}
+
+/* -------------------Gallery of photo----------------- */
+
+.gallery {
+  display: flex;
+  width: 1440px;
+  height: 792px;
+  padding-top: 108px;
+  padding-right: 156px;
+  padding-left: 156px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 24px;
+  column-gap: 24px;
+  background-color: #fff;
+}
+
+.photos-list-item {
+  flex-basis: calc((100% - 48px) / 3);
+  height: 200px;
+  border: 1px solid #808080;
+}
+
+.photo {
+  width: 100%;
+  height: 152px;
+  object-fit: cover;
+}
+
+.photo-information-container {
+  padding: 4px 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 28px;
+  width: 100%;
+  height: 48px;
+}
+
+
+.item-photo-information-container {
+  text-align: center;
+  color: #2E2F42;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+
+.accent {
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+/* -------------------------loader------------------- */
+
+.loader {
+  width: 108px;
+  height: 16px;
+  background:
+    radial-gradient(circle 8px at 8px center, #FFF 100%, transparent 0),
+    radial-gradient(circle 8px at 8px center, #FFF 100%, transparent 0);
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  position: relative;
+  animation: ballX 1s linear infinite;
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #FFF;
+  inset: 0;
+  margin: auto;
+  animation: moveX 1s cubic-bezier(0.5, 300, 0.5, -300) infinite;
+}
+
+@keyframes ballX {
+
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    background-position: 25% 0, 75% 0
+  }
+
+  40% {
+    background-position: 25% 0, 85% 0
+  }
+
+  90% {
+    background-position: 15% 0, 75% 0
+  }
+}
+
+@keyframes moveX {
+  100% {
+    transform: translate(0.15px)
+  }
 }
