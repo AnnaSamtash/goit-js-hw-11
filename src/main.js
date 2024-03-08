@@ -19,10 +19,7 @@ export const showLoader = () => {
 const hideLoader = () => {
     preloader.style.display = 'none';
 };
-const handleLoad = () => {
-    document.body.classList.add('loaded');
-    document.body.classList.remove('loaded_hiding');
-};
+
 
 form.addEventListener('submit', sendForm);
 
@@ -37,10 +34,10 @@ function sendForm(evt) {
                 .then((photos) => {
                     renderPhotos(photos.hits);
                     hideLoader();
-                    handleLoad();
                 })
                 .catch((error) => {
                     console.log(error);
+                    hideLoader();
                     iziToast.error({
                         message: 'Sorry, an error occurred while loading. Please try again!',
                         theme: 'dark',
