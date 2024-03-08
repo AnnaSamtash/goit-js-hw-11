@@ -11,6 +11,7 @@ export function renderPhotos(arr) {
             position: 'topRight',
         });
     } else {
+            
         const markup = arr.map((photo) => {
             return `<li class="photos-list-item">
             <a class="photos-list-link" href="${photo.largeImageURL}">

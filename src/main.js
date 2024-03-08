@@ -11,6 +11,18 @@ export const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionDelay: 250
 });
+const preloader = document.querySelector('.loader');
+export const showLoader = () => {
+  preloader.style.display = 'flex';
+};
+ const hideLoader = () => {
+  preloader.style.display = 'none';
+};
+ const handleLoad = () => {
+  document.body.classList.add('loaded');
+  document.body.classList.remove('loaded_hiding');
+};
+window.onload = handleLoad;
 
 form.addEventListener('submit', sendForm);
 
@@ -20,7 +32,11 @@ function sendForm(evt) {
     const input = evt.target.elements.search.value.trim();
     if (input !== '') {
         fetchPhotoFromPixabay()
-            .then((photos) => renderPhotos(photos.hits))
+            .then((photos) => {
+                renderPhotos(photos.hits)
+                hideLoader();
+                handleLoad();
+            })
             .catch((error) => {
                 console.log(error);
                 iziToast.error({

@@ -163,50 +163,70 @@ body {
 /* -------------------------loader------------------- */
 
 .loader {
-  width: 108px;
-  height: 16px;
-  background:
-    radial-gradient(circle 8px at 8px center, #FFF 100%, transparent 0),
-    radial-gradient(circle 8px at 8px center, #FFF 100%, transparent 0);
-  background-size: 16px 16px;
-  background-repeat: no-repeat;
-  position: relative;
-  animation: ballX 1s linear infinite;
-}
-
-.loader:before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
+  color: #fff;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
   border-radius: 50%;
-  background: #FFF;
-  inset: 0;
-  margin: auto;
-  animation: moveX 1s cubic-bezier(0.5, 300, 0.5, -300) infinite;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
 }
 
-@keyframes ballX {
+@keyframes mulShdSpin {
 
   0%,
-  25%,
-  50%,
-  75%,
   100% {
-    background-position: 25% 0, 75% 0
+    box-shadow: 0 -3em 0 0.2em,
+      2em -2em 0 0em, 3em 0 0 -1em,
+      2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 -1em, -3em 0 0 -1em,
+      -2em -2em 0 0;
   }
 
-  40% {
-    background-position: 25% 0, 85% 0
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em,
+      3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 -1em, -3em 0 0 -1em,
+      -2em -2em 0 -1em;
   }
 
-  90% {
-    background-position: 15% 0, 75% 0
+  25% {
+    box-shadow: 0 -3em 0 -0.5em,
+      2em -2em 0 0, 3em 0 0 0.2em,
+      2em 2em 0 0, 0 3em 0 -1em,
+      -2em 2em 0 -1em, -3em 0 0 -1em,
+      -2em -2em 0 -1em;
   }
-}
 
-@keyframes moveX {
-  100% {
-    transform: translate(0.15px)
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+      3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em,
+      -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+      3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em,
+      -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0,
+      -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em,
+      3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em,
+      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
   }
 }
