@@ -12,15 +12,17 @@ export const lightbox = new SimpleLightbox('.gallery a', {
     captionDelay: 250
 });
 const preloader = document.querySelector('.loader');
+preloader.style.display = 'none';
+
 export const showLoader = () => {
-  preloader.style.display = 'flex';
+    preloader.style.display = 'flex';
 };
- const hideLoader = () => {
-  preloader.style.display = 'none';
+const hideLoader = () => {
+    preloader.style.display = 'none';
 };
- const handleLoad = () => {
-  document.body.classList.add('loaded');
-  document.body.classList.remove('loaded_hiding');
+const handleLoad = () => {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
 };
 window.onload = handleLoad;
 
@@ -31,6 +33,7 @@ function sendForm(evt) {
     listOfPhotos.innerHTML = "";
     const input = evt.target.elements.search.value.trim();
     if (input !== '') {
+        showLoader();
         fetchPhotoFromPixabay()
             .then((photos) => {
                 renderPhotos(photos.hits)

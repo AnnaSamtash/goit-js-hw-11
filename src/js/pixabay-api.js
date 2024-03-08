@@ -1,5 +1,5 @@
 
-import { inputSearch, showLoader, } from '../main';
+import { inputSearch } from '../main';
 
 
 export function fetchPhotoFromPixabay() {
@@ -11,7 +11,7 @@ export function fetchPhotoFromPixabay() {
         orientation: "horizontal",
         safesearch: true
     });
-    showLoader();
+    
     return fetch(`https://pixabay.com/api/?${searchParams}`)
         .then((response) => {
             if (!response.ok) {
