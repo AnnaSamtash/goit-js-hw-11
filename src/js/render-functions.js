@@ -1,5 +1,6 @@
 import iziToast from "izitoast"
 import { listOfPhotos, lightbox } from '../main';
+import "izitoast/dist/css/iziToast.min.css";
 
 export function renderPhotos(arr) { 
     if (arr.length == 0) {

@@ -1,6 +1,5 @@
 @import url('./reset.css');
-@import "izitoast/dist/css/iziToast.min.css";
-@import "simplelightbox/dist/simple-lightbox.min.css";
+
 
 :root {
   font-family: Montserrat,
