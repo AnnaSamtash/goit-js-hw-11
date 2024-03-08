@@ -31,9 +31,10 @@ form.addEventListener('submit', sendForm);
 function sendForm(evt) {
     evt.preventDefault();
     listOfPhotos.innerHTML = "";
+    showLoader();
     const input = evt.target.elements.search.value.trim();
     if (input !== '') {
-        showLoader();
+        
         fetchPhotoFromPixabay()
             .then((photos) => {
                 renderPhotos(photos.hits)
